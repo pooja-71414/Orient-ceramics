@@ -8,9 +8,11 @@
 
 </head>
 <body>
-    <div class="container-fluid">
+<?php include 'menu.php'?>
+
+    <div class="container-fluid mt-4">
         
-        <div class="card w-50">
+        <div class="card w-50 m-auto">
             <div class="card-header">
                 <h3 class="text text-warning text-center">Employee Table</h3>
             </div>
@@ -18,15 +20,15 @@
                 <form class="form" enctype="multipart/form-data">
                     <div class="form-group">
                         <label class="form-label" for="e_id">* Employee Id</label>
-                        <input type="number" class="form-control" name="e_id"/>
+                        <input type="number" class="form-control" name="e_id" placeholder="Entere Id Here" required/>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="ename">* Employee Name</label>
-                        <input type="text" class="form-control" name="ename"/>
+                        <input type="text" class="form-control" name="ename" placeholder="Entere Your Name Here"/>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="ecity">* Employee City</label>
-                        <input type="text" class="form-control" name="ecity"/>
+                        <input type="text" class="form-control" name="ecity" placeholder="Entere City Name Here"/>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="econtact">* Employee Contact Number</label>
