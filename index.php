@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +19,7 @@
                 <h3 class="text text-dark text-center">Employee Table</h3>
             </div>
             <div class="card-body">
-                <form class="form" enctype="multipart/form-data">
+                <form class="form" enctype="multipart/form-data" method="post" action="main.php">
                     <div class="form-group">
                         <label class="form-label mt-4" for="e_id">Employee Id</label>
                         <input type="number" class="form-control" name="e_id" placeholder="Enter Id Here" required/>
