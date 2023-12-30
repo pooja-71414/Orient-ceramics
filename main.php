@@ -3,8 +3,8 @@
     {
         public function __construct()
         {
-           $con=mysqli_connect("localhost","root","","Orient_ceramics");
-           
+           $con=mysqli_connect('localhost','root','','Orient_ceramics');
+           $this->db=$con;
             if(!$con)
             {
                 die("Error:".mysqli_connect_error());   
@@ -14,6 +14,12 @@
             {
                 echo"--------CONNECTED---------";
             }
+        }
+        function insert($e_id,$ename,$city,$econtact, $esalary, $folder)
+        {
+            $sql= "INSERT INTO `employee`(`e_id`, `ename`, `ecity`, `econtact`, `esalary`, `esign`) VALUES ('$e_id','$ename','$city','$econtact','$esalary','$folder')";
+            $result=mysqli_query($this->db,$sql);
+            
         }
 
     }
@@ -26,7 +32,9 @@
         $econtact=$_POST['econtact'];
         $esalary=$_POST['esalary'];
         $file=$_FILES['esign']['name'];
-        $tname=$_FILES['esign']['name'];
-
+        $tname=$_FILES['esign']['tmp_name'];
+        $folder="image/".$tname;
+        move_uploaded_file($tname, $folder);
+        $ob->insert($e_id,$ename,$city,$econtact, $esalary, $folder);
     }
 ?>
