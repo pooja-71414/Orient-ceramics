@@ -4,6 +4,7 @@
         public function __construct()
         {
            $con=mysqli_connect("localhost","root","","Orient_ceramics");
+           $this->db=$con;
             if(!$con)
             {
                 die("Error:".mysqli_connect_error());   

@@ -14,36 +14,35 @@
         
         <div class="card w-75 m-auto bg bg-light">
             <div class="card-header">
-                <h3 class="text text-dark
- text-center">Employee Table</h3>
+                <h3 class="text text-dark text-center">Employee Table</h3>
             </div>
             <div class="card-body">
                 <form class="form" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label class="form-label" for="e_id">* Employee Id</label>
+                        <label class="form-label mt-4" for="e_id">Employee Id</label>
                         <input type="number" class="form-control" name="e_id" placeholder="Enter Id Here" required/>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="ename">* Employee Name</label>
+                        <label class="form-label mt-4" for="ename">Employee Name</label>
                         <input type="text" class="form-control" name="ename" placeholder="Enter Your Name Here" required/>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="ecity">* Employee City</label>
+                        <label class="form-label mt-4" for="ecity">Employee City</label>
                         <input type="text" class="form-control" name="ecity" placeholder="Enter City Name Here" required/>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="econtact">* Employee Contact Number</label>
+                        <label class="form-label mt-4" for="econtact">Employee Contact Number</label>
                         <input type="number" class="form-control" name="econtact" placeholder="Enter Your Contact Number Here" required/>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="esalary">* Employee Salary</label>
+                        <label class="form-label mt-4" for="esalary">Employee Salary</label>
                         <input type="number" class="form-control" name="esalary" placeholder="Enter Your Salary Here" required/>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="esign">* Employee Signature</label>
+                        <label class="form-label mt-4" for="esign">Employee Signature</label>
                         <input type="file" class="form-control" name="esign" required/>
                     </div>
-                    <div class="mt-3">
+                    <div class="mt-4">
                         <button class="btn btn-danger" type="submit" name="submit">Submit</button>
                     </div>
                 </form>

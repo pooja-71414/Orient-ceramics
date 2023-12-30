@@ -1,6 +1,6 @@
 <?php include 'css.php'; ?>
 
-<nav class="navbar navbar-expand-lg bg bg-info navbar light mt-2">
+<nav class="navbar navbar-expand-lg bg bg-info navbar light mt-1">
   <div class="container-fluid">
     <a class="navbar-brand">NAVBAR</a>
     <form class="d-flex" role="search">
