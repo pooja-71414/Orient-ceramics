@@ -39,22 +39,9 @@ require_once('main.php');
                             <?php echo $row["ename"] ?>
                         </div>
                         <div class="col">
-                            <form action="" method="POST">
-                                <input type="number" name="e_id" value="<?php echo $row['e_id']; ?>" hidden>
-                                <button class="btn btn-info" type="submit" name="view" onclick="return confirm('are you sure to view data')">view</button>
-                            </form>
-                            <!-- <form action="" method="POST">
-                            <input type="number" name="e_id" value="<? //php echo $row['e_id'];
-                                                                    ?>" hidden>
-                        <button class="btn btn-primary" type="submit" name="update"
-                            onclick="return confirm('are you sure to update')">update</button>"
-                        </form>
-                        <form action="" method="POST">
-                        <input type="number" name="e_id" value="<? //php echo $row['e_id'];
-                                                                ?>" hidden>
-                        <button class="btn btn-danger" type="submit" name="delete"
-                            onclick="return confirm('are you sure to delete')">delete</button>
-                    </form>-->
+                            <a href="view.php?id=<?php echo $row['e_id']; ?>" class="btn btn-info">
+                                view
+                            </a>
                         </div>
                     </div>
                     <hr class="bg bg-info">
