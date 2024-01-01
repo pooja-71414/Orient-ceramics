@@ -20,10 +20,7 @@
             </div>
             <div class="card-body">
                 <form class="form" enctype="multipart/form-data" method="post" action="main.php">
-                    <div class="form-group">
-                        <label class="form-label mt-4" for="e_id">Employee Id</label>
-                        <input type="number" class="form-control" name="e_id" placeholder="Enter Id Here" required/>
-                    </div>
+                    
                     <div class="form-group">
                         <label class="form-label mt-4" for="ename">Employee Name</label>
                         <input type="text" class="form-control" name="ename" placeholder="Enter Your Name Here" required/>

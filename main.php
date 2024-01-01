@@ -1,6 +1,7 @@
 <?php
     class main
     {
+        private $db;
         public function __construct()
         {
            $con=mysqli_connect('localhost','root','','Orient_ceramics');
@@ -15,26 +16,39 @@
                 echo"--------CONNECTED---------";
             }
         }
-        function insert($e_id,$ename,$city,$econtact, $esalary, $folder)
+        function insert($ename,$city,$econtact, $esalary, $folder)
         {
-            $sql= "INSERT INTO `employee`(`e_id`, `ename`, `ecity`, `econtact`, `esalary`, `esign`) VALUES ('$e_id','$ename','$city','$econtact','$esalary','$folder')";
+            $sql= "INSERT INTO `employee`(`ename`, `ecity`, `econtact`, `esalary`, `esign`) VALUES ('$ename','$city','$econtact','$esalary','$folder')";
             $result=mysqli_query($this->db,$sql);
-            
+            if($result)
+            {
+                echo"data inserted sucessfully";
+            }
+            else
+            {
+                echo "not inserted sucessfully";
+            }
+        }
+        function view()
+        {
+            $sql= "SELECT * FROM `employee`";
+            $result=mysqli_query($this->db,$sql);
+                      
+            return $result;
         }
 
     }
     $ob=new main();
     if(isset($_POST["submit"]))
     {
-        $e_id=$_POST['e_id'];
         $ename=$_POST['ename'];
         $city=$_POST['ecity'];
         $econtact=$_POST['econtact'];
         $esalary=$_POST['esalary'];
         $file=$_FILES['esign']['name'];
         $tname=$_FILES['esign']['tmp_name'];
-        $folder="image/".$tname;
+        $folder="image/".$file;
         move_uploaded_file($tname, $folder);
-        $ob->insert($e_id,$ename,$city,$econtact, $esalary, $folder);
+        $ob->insert($ename,$city,$econtact, $esalary, $folder);
     }
 ?>
