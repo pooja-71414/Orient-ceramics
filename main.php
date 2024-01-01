@@ -36,7 +36,16 @@
                       
             return $result;
         }
-
+        function delete($e_id)
+        {
+            $sql= "DELETE FROM `employee` WHERE `e_id`='$e_id'";
+            $result=mysqli_query($this->db,$sql);
+            if($result){
+                header("location:index.php");
+            }else{
+                echo 'data not deleted.......';
+            }
+        }
     }
     $ob=new main();
     if(isset($_POST["submit"]))
@@ -50,5 +59,9 @@
         $folder="image/".$file;
         move_uploaded_file($tname, $folder);
         $ob->insert($ename,$city,$econtact, $esalary, $folder);
+    }
+    elseif(isset($_POST['delete'])){
+        $id=$_POST['e_id'];
+        $ob->delete($id);
     }
 ?>
