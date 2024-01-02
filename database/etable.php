@@ -7,7 +7,7 @@ else {
 echo "Connected successfully";
 }
 
-$sql="CREATE TABLE employee(e_id INT(5) AUTO_INCREMENT PRIMARY KEY,ename VARCHAR(20) NOT NULL ,ecity VARCHAR(25) NOT NULL,econtact VARCHAR(10),esalary VARCHAR(11),esign VARCHAR(100) NOT NULL)";
+$sql="CREATE TABLE employee(e_id INT(5) AUTO_INCREMENT PRIMARY KEY,ename VARCHAR(255) NOT NULL ,ecity VARCHAR(255) NOT NULL,econtact VARCHAR(255),esalary int(6),esign VARCHAR(255) NOT NULL)";
 $result=mysqli_query($con,$sql);
 if (!$result) {
     die("ERROR:". mysqli_error($con));

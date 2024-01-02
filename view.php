@@ -32,7 +32,8 @@ require_once('main.php');
 
                 <?php
                 $data = $ob->view();
-                while ($row = mysqli_fetch_assoc($data)) {
+                $row= mysqli_fetch_assoc($data)
+                //while ($row = mysqli_fetch_assoc($data)) {
 
                 ?>
                     <div class="row ">
@@ -68,7 +69,7 @@ require_once('main.php');
                         </div>
                     </div>
                     <hr class="bg bg-info">
-                <?php } ?>
+                <?//php } ?>
             </div>
         </div>
     </div>
