@@ -27,7 +27,8 @@ require_once('main.php');
             <div class="card card-body">
 
                 <?php
-                $data = $ob->view();
+                $id=$_GET['e_id'];
+                $data = $ob->view($id);
                 while ($row = mysqli_fetch_assoc($data)) {
 
                 ?>

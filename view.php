@@ -1,5 +1,13 @@
 <?php
 require_once('main.php');
+/*$id=$_POST['e_id'];
+$sql="SELECT `e_id`, `ename`, `ecity`, `econtact`, `esalary`, `esign` FROM `employee` WHERE `e_id`='$id'";
+$result=mysqli_query($this->db, $sql);
+if($result) {
+    echo "display";
+} else {    
+    echo "not";
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +21,7 @@ require_once('main.php');
 
 <body>
     <?php include 'menu.php' ?>
+    
     <div class="container-fluid">
         <div class="card mt-3">
             <div class="card-header">
@@ -31,7 +40,7 @@ require_once('main.php');
             <div class="card card-body">
 
                 <?php
-                $data = $ob->view();
+                $data = $ob->view1();
                 $row= mysqli_fetch_assoc($data)
                 //while ($row = mysqli_fetch_assoc($data)) {
 
@@ -56,15 +65,12 @@ require_once('main.php');
                             <?php echo "<img src='".$row["esign"]."'height='100px' width='100px'>"; ?>
                         </div>
                         <div class="col">
+                        <a href="update.php?id=<?php echo $row['e_id']; ?>" class="btn btn-info">update</a>
                             <form action="" method="POST">
+                          
                                 <input type="number" name="e_id" value="<?php echo $row['e_id'];
                                                                         ?>" hidden>
-                                <button class="btn btn-primary" type="submit" name="update" onclick="return confirm('are you sure to update')">update</button>
-                            </form>
-                            <form action="" method="POST">
-                                <input type="number" name="e_id" value="<?php echo $row['e_id'];
-                                                                        ?>" hidden>
-                                <button class="btn btn-danger" type="submit" name="delete" onclick="return confirm('are you sure to delete')">delete</button>
+                                <button class="btn btn-danger mt-2" type="submit" name="delete" onclick="return confirm('are you sure to delete')">delete</button>
                             </form>
                         </div>
                     </div>
