@@ -11,45 +11,46 @@
                 die("Error:".mysqli_connect_error());   
 
             }
-            /*else
+            else
             {
-                echo"--------CONNECTED---------";
-            }*/        }
+                //echo"--------CONNECTED---------";
+            }     }
         function insert($ename,$city,$econtact, $esalary, $folder)
         {
             $sql= "INSERT INTO `employee`(`ename`, `ecity`, `econtact`, `esalary`, `esign`) VALUES ('$ename','$city','$econtact','$esalary','$folder')";
             $result=mysqli_query($this->db,$sql);
             if($result)
             {
-                echo"data inserted sucessfully";
+                header("location:display.php");
             }
             else
             {
                 echo "not inserted sucessfully";
             }
         }
-        function view($id)
+        function view()
         {
 
-            $sql= "SELECT * FROM `employee` WHERE `e_id`";
+            $sql= "SELECT * FROM `employee`";
             $result=mysqli_query($this->db,$sql);
                       
             return $result;
         }
-        function view1()
+        /*function view1()
         {
 
-            $sql= "SELECT * FROM `employee` WHERE `e_id`";
+            $sql= "SELECT `e_id`, `ename`, `ecity`, `econtact`, `esalary`, `esign` FROM `employee` WHERE `e_id`='$e_id'";
             $result=mysqli_query($this->db,$sql);
                       
             return $result;
-        }
+        }*/
         function update($e_id,$ename,$ecity,$econtact,$esalary,$folder)
         {
-            $sql="UPDATE `employee` SET `e_id`=$e_id,`ename`=$ename,`ecity`=$ecity,`econtact`=$econtact,`esalary`=$esalary,`esign`=$folder WHERE `e_id`='$e_id'";
+           // $e_id=$_POST['e_id'];
+            $sql="UPDATE `employee` SET `ename`='$ename',`ecity`='$ecity',`econtact`='$econtact',`esalary`='$esalary',`esign`='$folder' WHERE `e_id`='$e_id'";
             $res=mysqli_query($this->db,$sql);
             if($res){
-                echo 'data updated successfully';
+                header("location:display.php");
             }else{
                 echo 'data not updated';
             }
@@ -59,7 +60,7 @@
             $sql= "DELETE FROM `employee` WHERE `e_id`='$e_id'";
             $result=mysqli_query($this->db,$sql);
             if($result){
-                header("location:index.php");
+                header("location:display.php");
             }else{
                 echo 'data not deleted.......';
             }

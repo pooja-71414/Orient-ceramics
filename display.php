@@ -14,7 +14,7 @@ require_once('main.php');
 <body>
     <?php include 'menu.php' ?>
     <div class="container-fluid">
-        <div class="card mt-3">
+        <div class="card mt-3 ">
             <div class="card-header">
                 <h3>
                     <div class="row">
@@ -27,8 +27,8 @@ require_once('main.php');
             <div class="card card-body">
 
                 <?php
-                $id=$_GET['e_id'];
-                $data = $ob->view($id);
+                //$id=$_GET['e_id'];
+                $data = $ob->view();
                 while ($row = mysqli_fetch_assoc($data)) {
 
                 ?>
@@ -39,11 +39,22 @@ require_once('main.php');
                         <div class="col">
                             <?php echo $row["ename"] ?>
                         </div>
-                        <div class="col">
+                        <div class="col"> 
+                            <form action="" method="POST">
                             <a href="view.php?id=<?php echo $row['e_id']; ?>" class="btn btn-info">
                                 view
                             </a>
+                            
+                        <a href="update.php?id=<?php echo $row['e_id']; ?>" class="btn btn-success">update</a>
+                            
+                          
+                                <input type="number" name="e_id" value="<?php echo $row['e_id'];
+                                                                        ?>" hidden>
+                                <button class="btn btn-danger" type="submit" name="delete" onclick="return confirm('are you sure to delete')">delete</button>
+                            </form>
                         </div>
+                        
+
                     </div>
                     <hr class="bg bg-info">
                 <?php } ?>

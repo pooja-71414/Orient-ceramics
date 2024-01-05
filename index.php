@@ -41,8 +41,8 @@
                         <label class="form-label mt-4" for="esign">Employee Signature</label>
                         <input type="file" class="form-control" name="esign" required/>
                     </div>
-                    <div class="mt-4">
-                        <button class="btn btn-danger" type="submit" name="submit">Submit</button>
+                    <div class="mt-4 text text-center">
+                        <button class="btn btn-success " type="submit" name="submit">Submit</button>
                     </div>
                 </form>
             </div>

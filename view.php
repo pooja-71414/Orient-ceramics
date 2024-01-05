@@ -40,9 +40,9 @@ if($result) {
             <div class="card card-body">
 
                 <?php
-                $data = $ob->view1();
-                $row= mysqli_fetch_assoc($data)
-                //while ($row = mysqli_fetch_assoc($data)) {
+                $data = $ob->view();
+                //$row= mysqli_fetch_assoc($data)
+                while ($row = mysqli_fetch_assoc($data)) {
 
                 ?>
                     <div class="row ">
@@ -64,18 +64,10 @@ if($result) {
                         <div class="col">
                             <?php echo "<img src='".$row["esign"]."'height='100px' width='100px'>"; ?>
                         </div>
-                        <div class="col">
-                        <a href="update.php?id=<?php echo $row['e_id']; ?>" class="btn btn-info">update</a>
-                            <form action="" method="POST">
-                          
-                                <input type="number" name="e_id" value="<?php echo $row['e_id'];
-                                                                        ?>" hidden>
-                                <button class="btn btn-danger mt-2" type="submit" name="delete" onclick="return confirm('are you sure to delete')">delete</button>
-                            </form>
-                        </div>
+                       
                     </div>
                     <hr class="bg bg-info">
-                <?//php } ?>
+                <?php } ?>
             </div>
         </div>
     </div>
