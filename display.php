@@ -39,7 +39,7 @@ require_once('main.php');
                         </div>
                         <div class="col">
                             <form action="" method="POST">
-                                <a href="view.php?id=<?php echo $row['e_id']; ?>" class="btn btn-info">
+                                <a href="view.php?e_id=<?php echo $row['e_id']; ?>" name="userview" class="btn btn-info">
                                     view
                                 </a>
                                 <a href="update.php?id=<?php echo $row['e_id']; ?>" class="btn btn-success">update</a>

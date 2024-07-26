@@ -19,23 +19,23 @@ include 'main.php';
             <form class="form m-3" action="" method="post" enctype="multipart/form-data">
                 <div class="col-12">
                     <label for="ename" class="form-label"></label>
-                    <input type="text" class="form-control p-2" placeholder="enter your name" name="ename">
+                    <input type="text" class="form-control p-2" placeholder="enter your name" name="ename" required/>
                 </div>
                 <div class="col-12">
                     <label for="ecity" class="form-label"></label>
-                    <input type="text" class="form-control p-2" placeholder="enter your city" name="ecity">
+                    <input type="text" class="form-control p-2" placeholder="enter your city" name="ecity" required/>
                 </div>
                 <div class="col-12">
                     <label for="econtact" class="form-label"></label>
-                    <input type="number" class="form-control p-2" placeholder="enter your contact" name="econtact">
+                    <input type="number" class="form-control p-2" placeholder="enter your contact" name="econtact" required/>
                 </div>
                 <div class="col-12">
                     <label for="esalary" class="form-label"></label>
-                    <input type="text" class="form-control p-2" placeholder="enter your salary" name="esalary">
+                    <input type="text" class="form-control p-2" placeholder="enter your salary" name="esalary" required/>
                 </div>
                 <div class="col-12 mb-3">
                     <label for="esign" class="form-label"></label>
-                    <input type="file" class="form-control p-2" placeholder="enter your signature" name="esign">
+                    <input type="file" class="form-control p-2" placeholder="enter your signature" name="esign" required/>
                 </div>
                 <div class="col-12 mb-1 btn btn-auto">
                     <?php //$e_id=$_GET['e_id']; ?>

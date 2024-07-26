@@ -36,14 +36,7 @@
                       
             return $result;
         }
-        /*function view1()
-        {
-
-            $sql= "SELECT `e_id`, `ename`, `ecity`, `econtact`, `esalary`, `esign` FROM `employee` WHERE `e_id`='$e_id'";
-            $result=mysqli_query($this->db,$sql);
-                      
-            return $result;
-        }*/
+      
         function update($e_id,$ename,$ecity,$econtact,$esalary,$folder)
         {
            // $e_id=$_POST['e_id'];
@@ -89,12 +82,12 @@
         $file=$_FILES['esign']['name'];
         $tname=$_FILES['esign']['tmp_name'];
         $folder="image/".$file;
-        move_uploaded_file($tname, $folder);
-         
+        move_uploaded_file($tname, $folder);         
         $ob->update($e_id,$ename,$ecity,$econtact,$esalary,$folder);
     }
     elseif(isset($_POST['delete'])){
         $id=$_POST['e_id'];
         $ob->delete($id);
     }
+   
 ?>

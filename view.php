@@ -1,4 +1,5 @@
 <?php
+include("database/connection_db.php");
 require_once('main.php');
 /*$id=$_POST['e_id'];
 $sql="SELECT `e_id`, `ename`, `ecity`, `econtact`, `esalary`, `esign` FROM `employee` WHERE `e_id`='$id'";
@@ -15,7 +16,7 @@ if($result) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>display</title>
+    <title>view</title>
     <?php include 'css.php' ?>
 </head>
 
@@ -33,18 +34,20 @@ if($result) {
                         <div class="col">contact</div>
                         <div class="col">salary</div>
                         <div class="col">sign</div>
-                        <div class="col">action</div>
+                        <!--<div class="col">action</div>-->
                     </div>
                 </h3>
             </div>
             <div class="card card-body">
 
-                <?php
-                $data = $ob->view();
-                //$row= mysqli_fetch_assoc($data)
-                while ($row = mysqli_fetch_assoc($data)) {
-
-                ?>
+            <?php
+			 $e_id=$_GET['e_id'];
+             // echo $id;
+               $sql="SELECT * FROM employee WHERE e_id='$e_id'";      
+               $res = mysqli_query($conn, $sql);
+               
+               while ($row = mysqli_fetch_assoc($res)) {
+				?>
                     <div class="row ">
                         <div class="col">
                             <?php echo $row["e_id"] ?>
@@ -67,7 +70,7 @@ if($result) {
                        
                     </div>
                     <hr class="bg bg-info">
-                <?php } ?>
+                <?php  } ?>
             </div>
         </div>
     </div>
